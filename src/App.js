@@ -1,7 +1,31 @@
-
 import './App.css';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Gif from "./components/Gif"
+import Image from './components/Image/Image';
+import Album from './components/Album/Album';
+import Artist from './components/Artist/Artist';
+
+const gif = {
+  id: '4HrBfVJJveBNS9ytSk',
+  title: 'Nintendo Plotting GIF by Gaming GIFs',
+  uploadedDate: '2018-04-03 15:21:50',
+  url: 'https://media4.giphy.com/media/4HrBfVJJveBNS9ytSk/200w.gif?cid=cb3f2bebpuo6jj0g5f9gfibjre2zzbb4yb1cfshtplanlrpw&rid=200w.gif&ct=g',
+  webp: 'https://media4.giphy.com/media/4HrBfVJJveBNS9ytSk/giphy.webp?cid=cb3f2bebpuo6jj0g5f9gfibjre2zzbb4yb1cfshtplanlrpw&rid=giphy.webp&ct=g',
+}
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <div>
+//         <Search />
+//       </div>
+//       <Gif title={gif.title} url={gif.url} />
+//     </div>
+//   );
+// }
+
+// export default App;
 
 function App() {
 
@@ -84,14 +108,14 @@ function App() {
 
   console.log(data.uri);
 
-
   return (
     <div className="App">
       <header className="App-header">
       <div className="content"> 
-        <img src={data.album.images[0].url}/>
-        <p className="song-album"> {data.album.name}</p>
-        <p className="song-artists"> {data.artists[0].name}</p>
+        <Image img={data.album.images[0].url}/>
+        <Album album={data.album.name}/>
+        <Artist name={data.album.artists[0].name}/>
+        <Gif title={gif.title} url={gif.url} />
         <Button type="button" class="btn btn-secondary btn-outline-light" > <a href={data.uri}></a>Select </Button>
       </div>
       </header>
