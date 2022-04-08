@@ -10,9 +10,9 @@ import store from './store';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-       <App />
-       <ToastContainer />
-     </Provider>
+      <App />
+      <ToastContainer />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
