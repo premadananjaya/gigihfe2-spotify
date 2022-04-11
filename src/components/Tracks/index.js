@@ -3,8 +3,8 @@ import './index.css';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 
-export default function Track({ imageUrl, title, artist, toggleSelect }) {
-  const [isSelected, setIsSelected] = useState(false);
+export default function Tracks ({ imageUrl, title, artist, select, toggleSelect }) {
+  const [isSelected, setIsSelected] = useState(select);
 
   const handleToggleSelect = () => {
     setIsSelected(!isSelected);
@@ -24,16 +24,22 @@ export default function Track({ imageUrl, title, artist, toggleSelect }) {
         </div>
         
         <div className="card__action">
-          <Button variant={isSelected ? 'primary' : 'secondary'} onClick={handleToggleSelect}>{isSelected ? 'Deselect' : 'Select'}</Button>
+          <Button
+            variant={isSelected ? 'primary' : 'secondary'}
+            onClick={handleToggleSelect}
+          >
+            {isSelected ? 'Deselect' : 'Select'}
+          </Button>
         </div>
       </div>
     </div>
   );
 }
 
-Track.propTypes = {
+Tracks.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   artist: PropTypes.string.isRequired,
   toggleSelect: PropTypes.func.isRequired,
-}
+  select: PropTypes.bool.isRequired,
+};

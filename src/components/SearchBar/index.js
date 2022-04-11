@@ -3,14 +3,16 @@ import Button from '../Button';
 import './index.css';
 import PropTypes from 'prop-types';
 import Input from '../Input';
+import { searchTrack } from '../../lib/fetchApi';
 import { toast } from 'react-toastify';
-import { searchTrack } from '../../lib/fetchApi.js';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../slice/authSlice';
 
- export default function SearchBar({ onSuccess, onClearSearch }) {
+export default function SearchBar({ onSuccess, onClearSearch }) {
   const accessToken = useSelector((state) => state.auth.accessToken);
   const [text, setText] = useState('');
   const [isClear, setIsClear] = useState(true);
+  const dispatch = useDispatch();
 
   const handleInput = (e) => {
     setText(e.target.value);
@@ -23,10 +25,14 @@ import { useSelector } from 'react-redux';
       const response = await searchTrack(text, accessToken);
 
       const tracks = response.tracks.items;
-      onSuccess(tracks);
+      onSuccess(tracks, text);
       setIsClear(false);
-    } catch (e) {
-      toast.error(e);
+    } catch (error) {
+      if (error.response.status === 401) {
+        dispatch(logout());
+      } else {
+        toast.error(error.message);
+      }
     }
   }
 
@@ -41,7 +47,7 @@ import { useSelector } from 'react-redux';
       <form className="form-search" onSubmit={handleSubmit}>
         <Input
           type="text"
-          placeholder="Search..."
+          placeholder="Search track..."
           className="form-search__input"
           required
           value={text}
@@ -60,4 +66,4 @@ import { useSelector } from 'react-redux';
 SearchBar.propTypes = {
   onSuccess: PropTypes.func.isRequired,
   onClearSearch: PropTypes.func.isRequired,
-}
+};

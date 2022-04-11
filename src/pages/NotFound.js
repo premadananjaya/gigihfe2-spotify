@@ -3,7 +3,7 @@ import Button from '../components/Button'
 import { useDocumentTitle } from '../lib/customHooks'
 
 export default function NotFound() {
-  useDocumentTitle('Not Found - Spotipy')
+  useDocumentTitle('Not Found')
   return (
     <main className="center">
       No Content Here...

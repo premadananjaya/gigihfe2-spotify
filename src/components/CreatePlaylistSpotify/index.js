@@ -9,7 +9,7 @@ import './index.css';
 import PropTypes from 'prop-types';
 import { logout } from '../../slice/authSlice';
 
-export default function CreatePlaylistForm({ uriTracks }) {
+export default function CreatePlaylistSpotify({ uriTracks }) {
   const accessToken = useSelector((state) => state.auth.accessToken);
   const userId = useSelector((state) => state.auth.user.id);
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
     if (form.title.length < 10) {
       setErrorForm({
         ...errorForm,
-        title: 'Title must be at least 10 characters long'
+        title: 'Title must be at least 10 characters long',
       });
       isValid = false;
     }
@@ -45,7 +45,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
     if (form.description.length > 100) {
       setErrorForm({
         ...errorForm,
-        description: 'Description must be less than 100 characters long'
+        description: 'Description must be less than 100 characters long',
       });
       isValid = false;
     }
@@ -83,7 +83,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
   }
 
   return (
-    <div className="create-playlist-form">
+    <div className="create-playlist-spotify">
       <div>
         <h2>Create Playlist</h2>
 
@@ -91,7 +91,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
           <InputGroup>
             <Input
               label="Title"
-              placeholder="Title of playlist"
+              placeholder="Title of Playlist"
               value={form.title}
               id="title-playlist"
               name="title"
@@ -104,7 +104,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
             <Input
               type='textarea'
               label="Description"
-              placeholder="Description of playlist"
+              placeholder="Description of Playlist"
               value={form.description}
               id="description-playlist"
               name="description"
@@ -123,6 +123,6 @@ export default function CreatePlaylistForm({ uriTracks }) {
   )
 }
 
-CreatePlaylistForm.propTypes = {
+CreatePlaylistSpotify.propTypes = {
   uriTracks: PropTypes.array.isRequired,
 };

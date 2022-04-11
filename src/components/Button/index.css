@@ -1,24 +1,22 @@
 .btn {
-  background-color: #A2D5AB;
-  border: none;
-  color: white;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
+  min-height: 44px;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  background-color: var(--green);
+  border: none;
   cursor: pointer;
-  border-radius: 10px;
+  color: #FFFFFF;
+  transition: background-color 0.2s ease-in-out;
+  padding: 10px 24px;
+  font-size: 14.8px;
+  font-weight: 500;
 }
-
 
 .btn--link {
   text-decoration: none;
 }
 
 .btn:hover {
-  background-color: #A2D5AB;
+  background-color: #24cf88;
 }
 
 .btn--secondary {
@@ -27,13 +25,8 @@
   background-color: transparent;
 }
 
-.btn--secondary:hover {
-  background-color: #A2D5AB;
-  color: #FFFFFF;
-}
-
 .btn--text {
-  color: #A2D5AB;
+  color: var(--green);
   background-color: transparent;
   padding: 0;
   min-height: 0;
@@ -41,4 +34,9 @@
 
 .btn--text:hover {
   background-color: transparent;
+}
+
+.btn--secondary:hover {
+  background-color: #16af6f;
+  color: #FFFFFF;
 }

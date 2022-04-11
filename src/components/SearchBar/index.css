@@ -7,11 +7,3 @@
 .form-search .form-search__input {
   flex: 1 1 100%;
 }
-
-.submit{
-  display: inline-block;
-}
-
-.box{
-    height: 1000px;        
-}
