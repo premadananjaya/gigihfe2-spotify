@@ -47,7 +47,7 @@ export default function SearchBar({ onSuccess, onClearSearch }) {
       <form className="form-search" onSubmit={handleSubmit}>
         <Input
           type="text"
-          placeholder="Search track..."
+          placeholder="Search artists, songs, or podcasts..."
           className="form-search__input"
           required
           value={text}

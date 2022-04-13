@@ -18,12 +18,10 @@ export default function Tracks ({ imageUrl, title, artist, select, toggleSelect 
       </div>
 
       <div className="card__data">
-        <div className="card__content">
-          <h3 className="card__title">{title}</h3>
-          <p className="card__artist">{artist}</p>
-        </div>
+        <h3 className="card__title truncate">{title}</h3>
+        <p className="card__artist truncate">{artist}</p>
         
-        <div className="card__action">
+      <div className="card__action">
           <Button
             variant={isSelected ? 'primary' : 'secondary'}
             onClick={handleToggleSelect}
