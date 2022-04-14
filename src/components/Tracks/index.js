@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import Button from '@mui/material/Button'
 
 export default function Tracks ({ imageUrl, title, artist, select, toggleSelect }) {
   const [isSelected, setIsSelected] = useState(select);
@@ -23,7 +23,7 @@ export default function Tracks ({ imageUrl, title, artist, select, toggleSelect 
         
       <div className="card__action">
           <Button
-            variant={isSelected ? 'primary' : 'secondary'}
+            variant="contained" size="medium" color='success' style={{ borderRadius: 25 }}
             onClick={handleToggleSelect}
           >
             {isSelected ? 'Deselect' : 'Select'}

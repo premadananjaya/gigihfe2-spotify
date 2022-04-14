@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../slice/authSlice';
-import Button from '../Button';
+import Button from '@mui/material/Button'
 import Logo from '../Logo';
 import './index.css';
 
@@ -14,7 +14,7 @@ export default function Navbar() {
         <Logo />
 
         <div className="navbar__menu">
-          <Button onClick={() => dispatch(logout())}>Logout</Button>
+        <Button variant="contained" size="medium" color='error' style={{ borderRadius: 25 }} onClick={() => dispatch(logout())}>Logout</Button>
         </div>
       </div>
     </nav>

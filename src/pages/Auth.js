@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Button from '../components/Button';
+import Button from '@mui/material/Button'
 import config from '../lib/config';
 import { useDocumentTitle } from '../lib/customHooks';
 import { getUserProfile } from '../lib/fetchApi';
@@ -53,7 +53,7 @@ export default function Auth() {
   return (
     <main className="center">
       <p>Login for next step...</p>
-      <Button href={getSpotifyLinkAuthorize()} external>Authorize</Button>
+      <Button variant="contained" size="large" color='success' style={{ borderRadius: 25 }} href={getSpotifyLinkAuthorize()} external>Authorize</Button>
     </main>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
-import Button from '../Button';
+import Button from '@mui/material/Button'
 import Input from '../Input';
 import InputGroup from '../InputGroup';
 import './index.css';
@@ -115,7 +115,7 @@ export default function CreatePlaylistSpotify({ uriTracks }) {
           </InputGroup>
 
           <div className="form-playlist__action">
-            <Button type="submit">Create</Button>
+          <Button variant="contained" size="medium" color='success' style={{ borderRadius: 25 }} type="submit">Create</Button>
           </div>
         </form>
       </div>
