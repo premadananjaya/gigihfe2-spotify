@@ -92,6 +92,7 @@ export default function CreatePlaylistSpotify({ uriTracks }) {
             <Input
               label="Title"
               placeholder="Title of Playlist"
+              data-testid="title-playlist"
               value={form.title}
               id="title-playlist"
               name="title"
@@ -105,6 +106,7 @@ export default function CreatePlaylistSpotify({ uriTracks }) {
               type='textarea'
               label="Description"
               placeholder="Description of Playlist"
+              data-testid="description-playlist"
               value={form.description}
               id="description-playlist"
               name="description"
@@ -114,9 +116,9 @@ export default function CreatePlaylistSpotify({ uriTracks }) {
             />
           </InputGroup>
 
-          <div className="form-playlist__action">
-          <Button variant="contained" size="medium" color='success' style={{ borderRadius: 25 }} type="submit">Create</Button>
-          </div>
+        <div className="form-playlist__action">
+          <Button variant="contained" size="medium" color='success' style={{ borderRadius: 25 }} type="submit" data-testid="btn-create-playlist">Create</Button>
+        </div>
         </form>
       </div>
     </div>

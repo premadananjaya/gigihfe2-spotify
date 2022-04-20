@@ -52,8 +52,11 @@ export default function SearchBar({ onSuccess, onClearSearch }) {
           required
           value={text}
           onChange={handleInput}
+          data-testid="search-input"
         />
-        <Button variant="contained" size="medium" color='success' style={{ borderRadius: 25 }} type="submit">Search</Button>
+        <Button variant="contained" size="medium" color='success' style={{ borderRadius: 25 }} type="submit" data-testid="search-button"
+           aria-label="search button"
+           disabled={text.length === 0}>Search</Button>
       </form>
 
       {!isClear && (
