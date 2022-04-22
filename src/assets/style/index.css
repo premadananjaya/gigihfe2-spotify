@@ -29,12 +29,16 @@ hr {
 }
 
 .center {
+  font-size: 30px;
+  font-weight: 1000;
+  color: azure;
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-image: url(https://i.pinimg.com/originals/b8/4f/41/b84f4195a6d33c93d01111287c0c7b7e.jpg);
 }
 
 .form {
@@ -63,6 +67,7 @@ white-space: nowrap;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 
 .content {
   margin-top: 40px;

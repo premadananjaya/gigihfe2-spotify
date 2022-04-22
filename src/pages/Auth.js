@@ -7,6 +7,7 @@ import config from '../lib/config';
 import { useDocumentTitle } from '../lib/customHooks';
 import { getUserProfile } from '../lib/fetchApi';
 import { login } from '../slice/authSlice';
+import './Auth.css';
 
 export default function Auth() {
   const dispatch = useDispatch();
