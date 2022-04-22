@@ -5,7 +5,7 @@ A Simple Dummy Website for Create Playlist with Spotify API
 
  ## Description
 
- API used: https://api.spotify.com/v1
+ API used: https://api.spotify.com/
 
  Setup:
 
